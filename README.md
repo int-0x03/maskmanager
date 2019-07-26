@@ -9,27 +9,37 @@ You can use script directly or install it to system:
 ```bash
 sudo ./install.sh
 ```
-After installation you can run:
+After installation you can run these examples:
 
 ```bash
 masksorter -f 1,3-6,9 < input.txt > output.txt
+masksorter input*.txt > output.txt
+masksorter input.txt input2.txt input3.txt > output.txt
 ```
 ## Usage
 
 ```bash
 usage: masksorter.py [-h] [--no-clear-masks] [--filter-len FILTER_LEN]
+                     [--verbose]
+                     [IN_FILES [IN_FILES ...]]
 
 Hashcat masks difficulty sorter. Read file from STDIN and print to STDOUT.
+
+positional arguments:
+  IN_FILES              Input file(s) for sorting. STDIN will be used by default.
 
 optional arguments:
   -h, --help            show this help message and exit
   --no-clear-masks, -nc
-                        Remove 1 difficulty masks (no masks) from output. By
-                        default fake masks be removed.
+                        Remove 1 difficulty masks (no masks) from output. By default fake masks will be removed.
   --filter-len FILTER_LEN, -f FILTER_LEN
                         Filter masks by length, -f min-max or -f len1,len2
+  --verbose, -v         Verbose output to STDERR
 
-Example: masksorter -f 1,3-6,9 < input.txt > output.txt
+Examples:
+	masksorter -f 1,3-6,9 < input.txt > output.txt
+	masksorter * > output.txt
+	masksorter input.txt input2.txt input3.txt > output.txt
 ```
 
 ## Contributing
