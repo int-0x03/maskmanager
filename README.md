@@ -9,7 +9,11 @@ You can use script directly or install it to system:
 ```bash
 sudo ./install.sh
 ```
+After installation you can run:
 
+```bash
+masksorter -f 1,3-6,9 < input.txt > output.txt
+```
 ## Usage
 
 ```bash
