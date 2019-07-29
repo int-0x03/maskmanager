@@ -86,14 +86,10 @@ def main():
         lines += fd.read().splitlines()
         fd.close()
     result = []
-    total_difficulty = 0
     for line in lines:
         difficulty = calculate_difficult(line)
         if (not args.no_clear_masks and difficulty == 1) or (args.valid_lenghts and mask_len(line) not in args.valid_lenghts):
             continue
-        if args.verbose:
-            total_difficulty += difficulty
-            eprint("[i] Mask '%s', difficulty: %d combinations." %(line, difficulty))
         result.append({
             "key": line,
             "value": difficulty
@@ -102,6 +98,10 @@ def main():
     for masks_dict in result:
         print(masks_dict['key'])
     if args.verbose:
+        total_difficulty = 0
+        for masks_dict in result:
+            eprint("[i] Mask '%s', difficulty: %d combinations." %(masks_dict['key'], masks_dict['value']))
+            total_difficulty += masks_dict['value']
         eprint("[i] Masks total count: %d\n    Total difficulty: %d combinations" %(len(result), total_difficulty))
 
 
