@@ -27,12 +27,12 @@ MASKS['?a'] = MASKS['?l'] + MASKS['?u'] + MASKS['?d'] + MASKS['?s']         # ?a
 
 
 def calculate_difficult(mask):
-    result = 0
+    result = 1
     for mask_char, count_chars in MASKS.items():
         count = mask.count(mask_char)
         if count > 0:
-            result += count_chars ** count
-    return 1 if result == 0 else result
+            result *= count_chars ** count
+    return result
 
 def eprint(*args, **kwargs):
     print(*args, file=sys.stderr, **kwargs)
