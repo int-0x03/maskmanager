@@ -1,6 +1,6 @@
-# Mask Sorter
+# Mask manager
 
-Python3 script for sorting and/or filtering hashcat's masks for bruteforce.
+Python3 script for sorting, generating, converting and/or filtering hashcat's masks for bruteforce.
 
 ## Installation
 
@@ -12,16 +12,15 @@ sudo ./install.sh
 After installation you can run these examples:
 
 ```bash
-masksorter -f 1,3-6,9 < input.txt > output.txt
-masksorter input*.txt > output.txt
-masksorter input.txt input2.txt input3.txt > output.txt
+maskmanager -f 1,3-6,9 < input.txt > output.txt
+maskmanager input*.txt > output.txt
+maskmanager input.txt input2.txt input3.txt > output.txt
 ```
 ## Usage
 
-```bash
-usage: masksorter.py [-h] [--no-clear-masks] [--filter-len FILTER_LEN]
-                     [--verbose]
-                     [IN_FILES [IN_FILES ...]]
+```usage: maskmanager.py [-h] [--no-clear-masks] [--filter-len FILTER_LEN]
+                      [--verbose]
+                      [IN_FILES [IN_FILES ...]]
 
 Hashcat masks difficulty sorter. Read file from STDIN and print to STDOUT.
 
@@ -37,10 +36,9 @@ optional arguments:
   --verbose, -v         Verbose output to STDERR
 
 Examples:
-	masksorter -f 1,3-6,9 < input.txt > output.txt
-	masksorter * > output.txt
-	masksorter input.txt input2.txt input3.txt > output.txt
-```
+    maskmanager -f 1,3-6,9 < input.txt > output.txt
+    maskmanager * > output.txt
+    maskmanager input.txt input2.txt input3.txt > output.txt```
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
