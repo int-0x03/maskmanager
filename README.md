@@ -18,7 +18,8 @@ maskmanager input.txt input2.txt input3.txt > output.txt
 ```
 ## Usage
 
-```usage: maskmanager.py [-h] [--no-clear-masks] [--filter-len FILTER_LEN]
+```bash
+usage: maskmanager.py [-h] [--no-clear-masks] [--filter-len FILTER_LEN]
                       [--verbose]
                       [IN_FILES [IN_FILES ...]]
 
@@ -38,7 +39,8 @@ optional arguments:
 Examples:
     maskmanager -f 1,3-6,9 < input.txt > output.txt
     maskmanager * > output.txt
-    maskmanager input.txt input2.txt input3.txt > output.txt```
+    maskmanager input.txt input2.txt input3.txt > output.txt
+```
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
